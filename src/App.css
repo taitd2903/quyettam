@@ -1,0 +1,489 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+.tong-diem {
+  position: relative;
+left: -10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+ 
+  font-size: 18px;
+  border-radius: 20px;
+  color: black;
+    background-color: #fff !important;
+}
+.tong-diem h3{
+  font-size: 20px; 
+}
+.tong-diem h3,
+.tong-diem span {
+  margin: 0; /* bỏ margin mặc định của h3 */
+  padding-left: 10px;
+}
+.tong-diem span{
+  margin-right:20px ;
+}
+
+.container123 {
+  margin: 0 auto;
+  padding: 0;
+  background: url('./assets/z6507079960893_eb09033c11430ca85676007e34424927.jpg') no-repeat center center;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;       /* Canh giữa theo chiều dọc */
+  justify-content: center;   /* Canh giữa theo chiều ngang */
+  overflow: hidden;
+  flex-direction: column;    /* Xếp các con theo chiều dọc */
+}
+.container123xephang{
+  margin: 0 auto;
+  padding: 0;
+  background: url('./assets/bgrchamdiem.jpg') no-repeat center center;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;       /* Canh giữa theo chiều dọc */
+  justify-content: center;   /* Canh giữa theo chiều ngang */
+  overflow: hidden;
+  flex-direction: column; 
+}
+.xephang{
+  padding-top: 120px !important;
+  margin-left: 0px !important;
+ margin: 0 auto !important;
+}
+@media screen and (max-width: 768px) {
+  .xephang{
+    padding-top: 100px !important;
+    margin-left: 0px !important;
+   margin: 0 auto !important;
+  }
+  .team-list-scrollable {
+    max-height: 450px !important; /* Tuỳ bạn muốn bao nhiêu px */
+    overflow-y: auto;
+    padding-right: 5px;
+    margin-top: 1em;
+  }
+}
+
+.menu-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 101;
+  font-size: 16px;
+  background: #2a61aa;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 6px 12px;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -350px;
+  width: 350px;
+  height: 100vh;
+  background: #242F65;
+  box-shadow: 3px 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  padding-left: 0px;
+  transition: left 0.3s ease;
+  z-index: 1000;
+  overflow-y: auto;
+}
+.side-menu.open {
+  left: 0;
+}
+.side-menu h3{
+  margin-top: 50px !important;
+  color: #fff;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  align-items: center !important;
+  text-align: center !important;
+  margin-right: 40px !important;
+}
+
+.team-item {
+  background: #fff;
+  max-width: 350px;
+  width: 100vw;
+  padding: 10px;
+  border: 1px solid black;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.team-item span {
+  color: #1D2457;
+
+}
+.team-item.selected {
+  background: #23AAE1;
+  color: #fff;
+}
+.team-badge {
+  background: #fff;
+  padding: 3px 8px;
+  border-radius: 10px;
+  font-size: 12px;
+}
+.team-badge img {
+  width: 30px;
+  margin-right: 5px;
+}
+
+.main-content {
+  max-width: 900px;
+ width: 100vw !important;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
+  padding-top: 60px;
+ color: #fff;
+}
+.main-content input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.team-info {
+  margin-top: 30px;
+  margin-bottom: 0px;
+  text-align: center;
+  align-items: center
+  ;
+}
+.team-info img {
+  position: relative;
+  margin-top: 50px !important;
+  left: -10px;
+  top: 30px;
+  width: 180px;
+}
+
+.criteria {
+  margin-bottom: 20px;
+}
+.criteria label {
+  text-transform: capitalize;
+}
+
+.criteria input[type="range"] {
+  width: 100%;
+}
+
+.submit-button {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 40px;
+  background: #242F65;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(36, 47, 101, 0.3);
+  transition: background 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+
+.score-list {
+  margin-top: 40px;
+}
+
+
+
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  background: #fff;
+  border-radius: 10px;
+  outline: none;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Thumb (Chrome/Safari) */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background: url('./assets/image-removebg-preview.png') no-repeat center center;
+  background-size: contain;
+  width: 40px !important;
+  height: 40px !important ;
+
+  border: none;
+  cursor: pointer;
+}
+
+/* Thumb (Firefox) */
+input[type="range"]::-moz-range-thumb {
+  background: url('./assets/image-removebg-preview.png') no-repeat center center;
+  background-size: contain;
+  width: 40px !important;
+  height: 40px !important;
+  border: none;
+  cursor: pointer;
+}
+
+/* Track (Firefox) */
+input[type="range"]::-moz-range-track {
+  background: #fff;
+  height: 20px;
+  border-radius: 10px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+.xephangdoi{
+  color: #fff !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+
+
+.team-list-scrollable {
+  max-height: 400px; /* Tuỳ bạn muốn bao nhiêu px */
+  overflow-y: auto;
+  padding-right: 5px;
+  margin-top: 1em;
+}
+
+/* Scrollbar đẹp */
+.team-list-scrollable::-webkit-scrollbar {
+  width: 6px;
+}
+.team-list-scrollable::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+/* Đội item */
+.team-score-item {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 0.75em;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(1290px);
+  color: black;
+}
+
+.team-cup {
+  font-size: 1.5em;
+}
+
+.team-avatar {
+  width: 190px;
+  height: 120px;
+  object-fit: cover;
+ 
+}
+
+.team-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.team-text {
+  margin: 0;
+  font-weight: bold;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+
+
+  .side-menu {
+    padding-top: 0px;
+  }
+  .side-menu.open {
+    padding-top: 0px;
+  }
+
+
+  .container {
+    /* background: url('./assets/bgrchamdiemmobile.jpg') no-repeat; */
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .team-info {
+    margin-top: 30px;
+    margin-bottom: 0px;
+    text-align: center;
+    align-items: center
+    ;
+  }
+  .team-info img {
+    position: relative;
+    margin-top: 60px !important;
+    left: -10px;
+    top: 30px;
+    width: 180px;
+  }
+  
+
+  input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    background: #fff;
+    border-radius: 10px;
+    outline: none;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Thumb (Chrome/Safari) */
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    background: url('./assets/image-removebg-preview.png') no-repeat center center;
+    background-size: contain;
+    width: 40px !important;
+    height: 40px !important ;
+  
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Thumb (Firefox) */
+  input[type="range"]::-moz-range-thumb {
+    background: url('./assets/image-removebg-preview.png') no-repeat center center;
+    background-size: contain;
+    width: 40px !important;
+    height: 40px !important;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Track (Firefox) */
+  input[type="range"]::-moz-range-track {
+    background: #fff;
+    height: 20px;
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+.container123xephang{
+  background: url('./assets/xephangmobile.jpg')  ;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+
+}
+
+
+
+  
+}
+
+
+.thongke-container {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  margin-top: 70px;
+}
+
+.thongke-back-button {
+  font-size: 0.875rem;
+  color: #3b82f6;
+  text-decoration: underline;
+  margin-bottom: 8px;
+}
+
+.thongke-header {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: white;
+}
+
+.thongke-total-score {
+  font-size: 1.125rem;
+  color: white;
+  font-size: 22px;
+  font-weight: 700;
+}
+.thongke-total-score strong,.thongke-total-score span {
+  font-weight: 700;
+  color: black;
+}
+.thongke-list-container {
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+
+.thongke-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .thongke-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+
+
+}
+
+.thongke-card {
+  background-color: #f7fafc;
+  padding: 6px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.thongke-card-header {
+  font-weight: 500;
+  color: #4a5568;
+}
+
+.thongke-card-time {
+  font-size: 0.875rem;
+  color: #718096;
+  margin-top: 8px;
+}
+
+@media (min-width: 360px) {
+  .thongke-container {
+
+    margin-top: 220px;
+  }
+  
+}
+
+/* .main-content h3{
+  color: white;
+} */

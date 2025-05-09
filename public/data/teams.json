@@ -1,0 +1,13 @@
+[
+    { "id": 1, "ten": "Vovinam Sakura Kids Star 1", "anh": "./team/TÊN ĐỘI UXUI-04.png" },
+    { "id": 2, "ten": "Captain Kids", "anh":  "./team/TÊN ĐỘI UXUI-08.png" },
+    { "id": 3, "ten": "Vovinam Sakura Kids Star 2", "anh": "./team/TÊN ĐỘI UXUI-05.png" },
+    { "id": 4, "ten": "Vovinam Hoài Đức Beauty Academy (VHDBA)", "anh": "./team/TÊN ĐỘI UXUI-07.png" },
+    { "id": 5, "ten": "Vovinam Future Champions (VFC)", "anh":  "./team/TÊN ĐỘI UXUI-06.png"},
+    { "id": 6, "ten": "Hansu Team Kids", "anh": "./team/TÊN ĐỘI UXUI-10.png" },
+    { "id": 7, "ten": "Little Vovinam Heroes (LVH)", "anh":  "./team/TÊN ĐỘI UXUI-03.png" },
+    { "id": 8, "ten": "Vovinam Young Warriors (VYWS)", "anh":  "./team/TÊN ĐỘI UXUI-02.png" },
+    { "id": 9, "ten": "Spider-kids", "anh":  "./team/TÊN ĐỘI UXUI-01.png" },
+    { "id": 10, "ten": "Sonic Team", "anh":  "./team/TÊN ĐỘI UXUI-09.png" }
+  ]
+  
