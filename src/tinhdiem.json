@@ -111,371 +111,370 @@
       ],
       "10": [
         { "min": 4, "score": 10 },
-        { "min": 3, "score": 9 },
-        { "min": 2, "score": 8 },
-        { "min": 1, "score": 7 },
-        { "min": 0, "score": 6 }
+        { "max": 3,"min": 3, "score": 9 },
+        { "max": 2,"min": 2, "score": 7 },
+        { "max": 1,"min": 1, "score": 5 },
+        { "max": 0,"min": 0, "score": 3 }
       ]
     },
-    "5":{
+  "5": {
+  "1": [
+    { "max": 3.06, "score": 10 },
+    { "min": 3.07, "max": 3.23, "score": 9 },
+    { "min": 3.24, "max": 3.40, "score": 8 },
+    { "min": 3.41, "max": 3.57, "score": 7 },
+    { "min": 3.58, "max": 3.74, "score": 6 },
+    { "min": 3.75, "max": 3.91, "score": 5 },
+    { "min": 3.92, "max": 4.08, "score": 4 },
+    { "min": 4.09, "max": 4.25, "score": 3 },
+    { "min": 4.26, "max": 4.42, "score": 2 },
+    { "min": 4.43, "score": 1 }
+  ],
+  "2": [
+    { "max": 4.68, "score": 10 },
+    { "min": 4.69, "max": 4.86, "score": 9 },
+    { "min": 4.87, "max": 5.04, "score": 8 },
+    { "min": 5.05, "max": 5.22, "score": 7 },
+    { "min": 5.23, "max": 5.40, "score": 6 },
+    { "min": 5.41, "max": 5.58, "score": 5 },
+    { "min": 5.59, "max": 5.76, "score": 4 },
+    { "min": 5.77, "max": 5.94, "score": 3 },
+    { "min": 5.95, "max": 6.12, "score": 2 },
+    { "min": 6.13, "score": 1 }
+  ],
+  "3": [
+    { "max": 3.83, "score": 10 },
+    { "min": 3.84, "max": 4.01, "score": 9 },
+    { "min": 4.02, "max": 4.19, "score": 8 },
+    { "min": 4.20, "max": 4.37, "score": 7 },
+    { "min": 4.38, "max": 4.55, "score": 6 },
+    { "min": 4.56, "max": 4.73, "score": 5 },
+    { "min": 4.74, "max": 4.91, "score": 4 },
+    { "min": 4.92, "max": 5.09, "score": 3 },
+    { "min": 5.10, "max": 5.27, "score": 2 },
+    { "min": 5.28, "score": 1 }
+  ],
+  "4": [
+    { "min": 9.56, "score": 10 },
+    { "min": 9.22, "max": 9.55, "score": 9 },
+    { "min": 8.88, "max": 9.21, "score": 8 },
+    { "min": 8.54, "max": 8.87, "score": 7 },
+    { "min": 8.20, "max": 8.53, "score": 6 },
+    { "min": 7.86, "max": 8.19, "score": 5 },
+    { "min": 7.52, "max": 7.85, "score": 4 },
+    { "min": 7.18, "max": 7.51, "score": 3 },
+    { "min": 6.84, "max": 7.17, "score": 2 },
+    { "max": 6.83, "score": 1 }
+  ],
+  "5": [
+    { "min": 103.62, "score": 10 },
+    { "min": 97.18, "max": 103.61, "score": 9 },
+    { "min": 90.74, "max": 97.17, "score": 8 },
+    { "min": 84.30, "max": 90.73, "score": 7 },
+    { "min": 77.86, "max": 84.29, "score": 6 },
+    { "min": 71.42, "max": 77.85, "score": 5 },
+    { "min": 64.98, "max": 71.41, "score": 4 },
+    { "min": 58.54, "max": 64.97, "score": 3 },
+    { "min": 52.10, "max": 58.53, "score": 2 },
+    { "max": 52.09, "score": 1 }
+  ],
+  "6": [
+    { "min": 11.79, "score": 10 },
+    { "min": 11.19, "max": 11.78, "score": 9 },
+    { "min": 10.59, "max": 11.18, "score": 8 },
+    { "min": 9.99, "max": 10.58, "score": 7 },
+    { "min": 9.39, "max": 9.98, "score": 6 },
+    { "min": 8.79, "max": 9.38, "score": 5 },
+    { "min": 8.19, "max": 8.78, "score": 4 },
+    { "min": 7.59, "max": 8.18, "score": 3 },
+    { "min": 6.99, "max": 7.58, "score": 2 },
+    { "max": 6.98, "score": 1 }
+  ],
+  "7": [
+    { "max": 8.44, "score": 10 },
+    { "min": 8.45, "max": 8.86, "score": 9 },
+    { "min": 8.87, "max": 9.28, "score": 8 },
+    { "min": 9.29, "max": 9.70, "score": 7 },
+    { "min": 9.71, "max": 10.12, "score": 6 },
+    { "min": 10.13, "max": 10.54, "score": 5 },
+    { "min": 10.55, "max": 10.96, "score": 4 },
+    { "min": 10.97, "max": 11.38, "score": 3 },
+    { "min": 11.39, "max": 11.80, "score": 2 },
+    { "min": 11.81, "score": 1 }
+  ],
+  "8": [
+    { "min": 23.69, "score": 10 },
+    { "min": 22.13, "max": 23.68, "score": 9 },
+    { "min": 20.57, "max": 22.12, "score": 8 },
+    { "min": 19.01, "max": 20.56, "score": 7 },
+    { "min": 17.45, "max": 19.00, "score": 6 },
+    { "min": 15.89, "max": 17.44, "score": 5 },
+    { "min": 14.33, "max": 15.88, "score": 4 },
+    { "min": 12.77, "max": 14.32, "score": 3 },
+    { "min": 11.21, "max": 12.76, "score": 2 },
+    { "max": 11.20, "score": 1 }
+  ],
+  "9": [
+    { "min": 269.57, "score": 10 },
+    { "min": 261.01, "max": 269.56, "score": 9 },
+    { "min": 252.45, "max": 261.00, "score": 8 },
+    { "min": 243.89, "max": 252.44, "score": 7 },
+    { "min": 235.33, "max": 243.88, "score": 6 },
+    { "min": 226.77, "max": 235.32, "score": 5 },
+    { "min": 218.21, "max": 226.76, "score": 4 },
+    { "min": 209.65, "max": 218.20, "score": 3 },
+    { "min": 201.09, "max": 209.64, "score": 2 },
+    { "max": 201.08, "score": 1 }
+  ],
+  "10": [
+    { "min": 5, "score": 10 },
+    {"min": 4, "max": 4, "score": 8 },
+    {"min": 3, "max": 3, "score": 6 },
+    {"min": 2, "max": 2, "score": 4 },
+    {"min": 1, "max": 1, "score": 2 },
+    {"min": 0, "max": 0, "score": 1 }
+  ]
+}
 
-      "1": [
-        {"max": 3.73, "score": 10},
-        {"min": 3.74, "max": 3.85, "score": 9},
-        {"min": 3.86, "max": 4.01, "score": 8},
-        {"min": 4.02, "max": 4.15, "score": 7},
-        {"min": 4.16, "max": 4.29, "score": 6},
-        {"min": 4.30, "max": 4.43, "score": 5},
-        {"min": 4.44, "max": 4.57, "score": 4},
-        {"min": 4.58, "max": 4.71, "score": 3},
-        {"min": 4.72, "max": 4.85, "score": 2},
-        {"min": 4.86, "score": 1}
-      ],
-      "2": [
-        {"max": 5.74, "score": 10},
-        {"min": 5.75, "max": 5.89, "score": 9},
-        {"min": 5.90, "max": 6.14, "score": 8},
-        {"min": 6.15, "max": 6.29, "score": 7},
-        {"min": 6.30, "max": 6.43, "score": 6},
-        {"min": 6.44, "max": 6.59, "score": 5},
-        {"min": 6.60, "max": 6.73, "score": 4},
-        {"min": 6.74, "max": 7.36, "score": 3},
-        {"min": 7.37, "max": 7.56, "score": 2},
-        {"min": 7.57, "score": 1}
-      ],
-      "3": [
-        {"max": 4.49, "score": 10},
-        {"min": 4.50, "max": 4.66, "score": 9},
-        {"min": 4.67, "max": 4.80, "score": 8},
-        {"min": 4.81, "max": 4.93, "score": 7},
-        {"min": 4.94, "max": 5.11, "score": 6},
-        {"min": 5.12, "max": 5.33, "score": 5},
-        {"min": 5.34, "max": 5.53, "score": 4},
-        {"min": 5.54, "max": 5.73, "score": 3},
-        {"min": 5.74, "max": 5.85, "score": 2},
-        {"min": 5.86, "score": 1}
-      ],
-      "4": [
-        {"min": 7.84, "score": 10},
-        {"min": 7.34, "max": 7.83, "score": 9},
-        {"min": 6.84, "max": 7.33, "score": 8},
-        {"min": 6.34, "max": 6.83, "score": 7},
-        {"min": 5.84, "max": 6.33, "score": 6},
-        {"min": 5.34, "max": 5.83, "score": 5},
-        {"min": 4.84, "max": 5.33, "score": 4},
-        {"min": 4.34, "max": 4.83, "score": 3},
-        {"min": 3.84, "max": 4.33, "score": 2},
-        {"max": 3.83, "score": 1}
-      ],
-      "5": [
-        {"max": 10, "score": 10},
-        {"min": 11, "max": 12, "score": 9},
-        {"min": 13, "max": 14, "score": 8},
-        {"min": 15, "max": 16, "score": 7},
-        {"min": 17, "max": 18, "score": 6},
-        {"min": 19, "max": 20, "score": 5},
-        {"min": 21, "max": 22, "score": 4},
-        {"min": 23, "max": 24, "score": 3},
-        {"min": 25, "max": 26, "score": 2},
-        {"min": 27, "score": 1}
-      ],
-      "6": [
-        {"max": 30, "score": 10},
-        {"min": 31, "max": 32, "score": 9},
-        {"min": 33, "max": 34, "score": 8},
-        {"min": 35, "max": 36, "score": 7},
-        {"min": 37, "max": 38, "score": 6},
-        {"min": 39, "max": 40, "score": 5},
-        {"min": 41, "max": 42, "score": 4},
-        {"min": 43, "max": 44, "score": 3},
-        {"min": 45, "max": 46, "score": 2},
-        {"min": 47, "score": 1}
-      ],
-      "7": [
-        {"max": 50, "score": 10},
-        {"min": 51, "max": 52, "score": 9},
-        {"min": 53, "max": 54, "score": 8},
-        {"min": 55, "max": 56, "score": 7},
-        {"min": 57, "max": 58, "score": 6},
-        {"min": 59, "max": 60, "score": 5},
-        {"min": 61, "max": 62, "score": 4},
-        {"min": 63, "max": 64, "score": 3},
-        {"min": 65, "max": 66, "score": 2},
-        {"min": 67, "score": 1}
-      ],
-      "8": [
-        {"max": 70, "score": 10},
-        {"min": 71, "max": 72, "score": 9},
-        {"min": 73, "max": 74, "score": 8},
-        {"min": 75, "max": 76, "score": 7},
-        {"min": 77, "max": 78, "score": 6},
-        {"min": 79, "max": 80, "score": 5},
-        {"min": 81, "max": 82, "score": 4},
-        {"min": 83, "max": 84, "score": 3},
-        {"min": 85, "max": 86, "score": 2},
-        {"min": 87, "score": 1}
-      ],
-      "9": [
-        {"max": 90, "score": 10},
-        {"min": 91, "max": 92, "score": 9},
-        {"min": 93, "max": 94, "score": 8},
-        {"min": 95, "max": 96, "score": 7},
-        {"min": 97, "max": 98, "score": 6},
-        {"min": 99, "max": 100, "score": 5},
-        {"min": 101, "max": 102, "score": 4},
-        {"min": 103, "max": 104, "score": 3},
-        {"min": 105, "max": 106, "score": 2},
-        {"min": 107, "score": 1}
-      ],
-      "10": [
-        {"max": 110, "score": 10},
-        {"min": 111, "max": 112, "score": 9},
-        {"min": 113, "max": 114, "score": 8},
-        {"min": 115, "max": 116, "score": 7},
-        {"min": 117, "max": 118, "score": 6},
-        {"min": 119, "max": 120, "score": 5},
-        {"min": 121, "max": 122, "score": 4},
-        {"min": 123, "max": 124, "score": 3},
-        {"min": 125, "max": 126, "score": 2},
-        {"min": 127, "score": 1}
-      ]
-    }
   },
   "nu": {
-    "4": {
-      "1": [
-        { "max": 4.12, "score": 10 },
-        { "min": 4.13, "max": 4.28, "score": 9 },
-        { "min": 4.29, "max": 4.44, "score": 8 },
-        { "min": 4.45, "max": 4.60, "score": 7 },
-        { "min": 4.61, "max": 4.76, "score": 6 },
-        { "min": 4.77, "max": 4.92, "score": 5 },
-        { "min": 4.93, "max": 5.08, "score": 4 },
-        { "min": 5.09, "max": 5.24, "score": 3 },
-        { "min": 5.25, "max": 5.40, "score": 2 },
-        { "min": 5.41, "score": 1 }
-      ],
-      "2": [
-        { "max": 6.79, "score": 10 },
-        { "min": 6.80, "max": 7.11, "score": 9 },
-        { "min": 7.12, "max": 7.43, "score": 8 },
-        { "min": 7.44, "max": 7.65, "score": 7 },
-        { "min": 7.66, "max": 7.85, "score": 6 },
-        { "min": 7.86, "max": 8.05, "score": 5 },
-        { "min": 8.06, "max": 8.25, "score": 4 },
-        { "min": 8.26, "max": 8.45, "score": 3 },
-        { "min": 8.46, "max": 9.03, "score": 2 },
-        { "min": 9.04, "score": 1 }
-      ],
-      "3": [
-        { "max": 5.37, "score": 10 },
-        { "min": 5.38, "max": 5.67, "score": 9 },
-        { "min": 5.68, "max": 5.97, "score": 8 },
-        { "min": 5.98, "max": 6.27, "score": 7 },
-        { "min": 6.28, "max": 6.57, "score": 6 },
-        { "min": 6.58, "max": 6.87, "score": 5 },
-        { "min": 6.88, "max": 7.17, "score": 4 },
-        { "min": 7.18, "max": 7.47, "score": 3 },
-        { "min": 7.48, "max": 7.77, "score": 2 },
-        { "min": 7.78, "score": 1 }
-      ],
-      "4": [
-        { "min": 66.52, "score": 10 },
-        { "min": 64.60, "max": 66.51, "score": 9 },
-        { "min": 62.68, "max": 64.59, "score": 8 },
-        { "min": 60.76, "max": 62.67, "score": 7 },
-        { "min": 58.84, "max": 60.75, "score": 6 },
-        { "min": 56.92, "max": 58.83, "score": 5 },
-        { "min": 54.99, "max": 56.91, "score": 4 },
-        { "min": 53.06, "max": 54.98, "score": 3 },
-        { "min": 24.51, "max": 53.05, "score": 2 },
-        { "max": 2.57, "score": 1 }
-      ],
-      "5": [
-        { "min": 66.52, "score": 10 },
-        { "min": 64.60, "max": 66.51, "score": 9 },
-        { "min": 62.68, "max": 64.59, "score": 8 },
-        { "min": 60.76, "max": 62.67, "score": 7 },
-        { "min": 58.84, "max": 60.75, "score": 6 },
-        { "min": 56.92, "max": 58.83, "score": 5 },
-        { "min": 54.99, "max": 56.91, "score": 4 },
-        { "min": 53.06, "max": 54.98, "score": 3 },
-        { "min": 25.51, "max": 53.05, "score": 2 },
-        { "max": 2.58, "score": 1 }
-      ],
-      "6": [
-        { "min": 3.59, "score": 10 },
-        { "min": 3.41, "max": 3.58, "score": 9 },
-        { "min": 3.23, "max": 3.40, "score": 8 },
-        { "min": 3.05, "max": 3.22, "score": 7 },
-        { "min": 2.87, "max": 3.04, "score": 6 },
-        { "min": 2.69, "max": 2.86, "score": 5 },
-        { "min": 2.51, "max": 2.68, "score": 4 },
-        { "min": 2.33, "max": 2.50, "score": 3 },
-        { "min": 2.15, "max": 2.32, "score": 2 },
-        { "max": 2.14, "score": 1 }
-      ],
-      "7": [
-        { "max": 12.31, "score": 10 },
-        { "min": 12.32, "max": 12.63, "score": 9 },
-        { "min": 12.64, "max": 12.95, "score": 8 },
-        { "min": 12.96, "max": 13.27, "score": 7 },
-        { "min": 13.28, "max": 13.59, "score": 6 },
-        { "min": 13.60, "max": 13.91, "score": 5 },
-        { "min": 13.92, "max": 14.23, "score": 4 },
-        { "min": 14.24, "max": 14.55, "score": 3 },
-        { "min": 14.56, "max": 15.83, "score": 2 },
-        { "min": 15.84, "score": 1 }
-      ],
-      "8": [
-        { "min": 6.79, "score": 10 },
-        { "min": 5.89, "max": 6.78, "score": 9 },
-        { "min": 5.00, "max": 5.88, "score": 8 },
-        { "min": 4.11, "max": 4.99, "score": 7 },
-        { "min": 3.22, "max": 4.10, "score": 6 },
-        { "min": 2.33, "max": 3.21, "score": 5 },
-        { "min": 1.44, "max": 2.32, "score": 4 },
-        { "min": 0.79, "max": 1.43, "score": 3 },
-        { "min": 0.79, "max": 1.43, "score": 2 },
-        { "max": 0.78, "score": 1 }
-      ],
-      "9": [
-        { "min": 170.13, "score": 3 },
-        { "min": 160.35, "max": 170.12, "score": 2 },
-        { "min": 150.57, "max": 160.34, "score": 1 },
-        { "min": 140.79, "max": 150.56, "score": 0 },
-        { "min": 131.01, "max": 140.78, "score": "-" },
-        { "min": 121.23, "max": 131.00, "score": "-" },
-        { "min": 111.45, "max": 121.22, "score": "-" },
-        { "min": 106.24, "max": 111.44, "score": "-" },
-        { "max": 106.24, "score": "-" }
-      ],
-      "10": [
-        { "min": 4, "score": 10 },
-        { "min": 3, "score": 9 },
-        { "min": 2, "score": 8 },
-        { "min": 1, "score": 7 },
-        { "min": 0, "score": 6 }
-      ]
-    },
-    "5":{
-      "1": [
-        { "max": 3.35, "score": 10 },
-        { "min": 3.36, "max": 3.59, "score": 9 },
-        { "min": 3.60, "max": 3.83, "score": 8 },
-        { "min": 3.84, "max": 4.07, "score": 7 },
-        { "min": 4.08, "max": 4.31, "score": 6 },
-        { "min": 4.32, "max": 4.55, "score": 5 },
-        { "min": 4.56, "max": 4.79, "score": 4 },
-        { "min": 4.80, "max": 5.03, "score": 3 },
-        { "min": 5.04, "max": 5.27, "score": 2 },
-        { "min": 5.28, "score": 1 }
-      ],
-      "2": [
-        { "max": 5.36, "score": 10 },
-        { "min": 5.37, "max": 5.56, "score": 9 },
-        { "min": 5.57, "max": 5.76, "score": 8 },
-        { "min": 5.77, "max": 5.96, "score": 7 },
-        { "min": 5.97, "max": 6.16, "score": 6 },
-        { "min": 6.17, "max": 6.36, "score": 5 },
-        { "min": 6.37, "max": 6.56, "score": 4 },
-        { "min": 6.57, "max": 6.76, "score": 3 },
-        { "min": 6.77, "max": 6.96, "score": 2 },
-        { "min": 6.97, "score": 1 }
-      ],
-      "3": [
-        { "max": 4.41, "score": 10 },
-        { "min": 4.42, "max": 4.62, "score": 9 },
-        { "min": 4.63, "max": 4.83, "score": 8 },
-        { "min": 4.84, "max": 5.04, "score": 7 },
-        { "min": 5.05, "max": 5.25, "score": 6 },
-        { "min": 5.26, "max": 5.46, "score": 5 },
-        { "min": 5.47, "max": 5.67, "score": 4 },
-        { "min": 5.68, "max": 5.88, "score": 3 },
-        { "min": 5.89, "max": 6.09, "score": 2 },
-        { "min": 6.10, "score": 1 }
-      ],
-      "4": [
-        { "min": 79.78, "score": 10 },
-        { "min": 76.67, "max": 79.77, "score": 9 },
-        { "min": 73.55, "max": 76.66, "score": 8 },
-        { "min": 70.44, "max": 73.54, "score": 7 },
-        { "min": 67.34, "max": 70.43, "score": 6 },
-        { "min": 64.23, "max": 67.33, "score": 5 },
-        { "min": 61.11, "max": 64.22, "score": 4 },
-        { "min": 57.99, "max": 61.10, "score": 3 },
-        { "min": 54.89, "max": 57.98, "score": 2 },
-        { "max": 54.89, "score": 1 }
-      ],
-      "5": [
-        { "min": 9.10, "score": 10 },
-        { "min": 8.77, "max": 9.09, "score": 9 },
-        { "min": 8.43, "max": 8.76, "score": 8 },
-        { "min": 8.10, "max": 8.42, "score": 7 },
-        { "min": 7.76, "max": 8.09, "score": 6 },
-        { "min": 7.43, "max": 7.75, "score": 5 },
-        { "min": 7.09, "max": 7.42, "score": 4 },
-        { "min": 6.76, "max": 7.08, "score": 3 },
-        { "min": 6.42, "max": 6.75, "score": 2 },
-        { "max": 6.41, "score": 1 }
-      ],
-      "6": [
-        { "min": 9.21, "score": 10 },
-        { "min": 8.97, "max": 9.20, "score": 9 },
-        { "min": 8.73, "max": 8.96, "score": 8 },
-        { "min": 8.49, "max": 8.72, "score": 7 },
-        { "min": 8.25, "max": 8.48, "score": 6 },
-        { "min": 8.01, "max": 8.24, "score": 5 },
-        { "min": 7.77, "max": 8.00, "score": 4 },
-        { "min": 7.53, "max": 7.76, "score": 3 },
-        { "min": 7.28, "max": 7.52, "score": 2 },
-        { "max": 7.28, "score": 1 }
-      ],
-      "7": [
-        { "max": 21.64, "score": 10 },
-        { "min": 20.86, "max": 21.63, "score": 9 },
-        { "min": 20.08, "max": 20.85, "score": 8 },
-        { "min": 19.30, "max": 20.07, "score": 7 },
-        { "min": 18.52, "max": 19.29, "score": 6 },
-        { "min": 17.74, "max": 18.51, "score": 5 },
-        { "min": 16.96, "max": 17.73, "score": 4 },
-        { "min": 16.18, "max": 16.95, "score": 3 },
-        { "min": 15.40, "max": 16.17, "score": 2 },
-        { "max": 15.39, "score": 1 }
-      ],
-      "8": [
-        { "min": 21.64, "score": 10 },
-        { "min": 20.86, "max": 21.63, "score": 9 },
-        { "min": 20.08, "max": 20.85, "score": 8 },
-        { "min": 19.30, "max": 20.07, "score": 7 },
-        { "min": 18.52, "max": 19.29, "score": 6 },
-        { "min": 17.74, "max": 18.51, "score": 5 },
-        { "min": 16.96, "max": 17.73, "score": 4 },
-        { "min": 16.18, "max": 16.95, "score": 3 },
-        { "min": 15.40, "max": 16.17, "score": 2 },
-        { "max": 15.39, "score": 1 }
-      ],
-      "9": [
-        { "min": 233.96, "score": 5 },
-        { "min": 229.18, "max": 233.95, "score": 4 },
-        { "min": 224.39, "max": 229.17, "score": 3 },
-        { "min": 219.60, "max": 224.38, "score": 2 },
-        { "min": 214.84, "max": 219.59, "score": 1 },
-        { "min": 210.06, "max": 214.83, "score": 0 },
-        { "min": 205.27, "max": 210.05, "score": "-" },
-        { "min": 200.49, "max": 205.26, "score": "-" },
-        { "min": 195.71, "max": 200.48, "score": "-" },
-        { "max": 195.71, "score": "-" }
-      ],
-      "10": [
-        { "min": 5, "score": 10 },
-        { "min": 4, "score": 9 },
-        { "min": 3, "score": 8 },
-        { "min": 2, "score": 7 },
-        { "min": 1, "score": 6 },
-        { "min": 0, "score": 5 }
-      ]
-    }
+"4": {
+  "1": [
+    { "max": 4.12, "score": 10 },
+    { "min": 4.13, "max": 4.28, "score": 9 },
+    { "min": 4.29, "max": 4.44, "score": 8 },
+    { "min": 4.45, "max": 4.60, "score": 7 },
+    { "min": 4.61, "max": 4.76, "score": 6 },
+    { "min": 4.77, "max": 4.92, "score": 5 },
+    { "min": 4.93, "max": 5.08, "score": 4 },
+    { "min": 5.09, "max": 5.24, "score": 3 },
+    { "min": 5.25, "max": 5.40, "score": 2 },
+    { "min": 5.41, "score": 1 }
+  ],
+  "2": [
+    { "max": 6.79, "score": 10 },
+    { "min": 6.80, "max": 7.11, "score": 9 },
+    { "min": 7.12, "max": 7.43, "score": 8 },
+    { "min": 7.44, "max": 7.75, "score": 7 },
+    { "min": 7.76, "max": 8.07, "score": 6 },
+    { "min": 8.08, "max": 8.39, "score": 5 },
+    { "min": 8.40, "max": 8.71, "score": 4 },
+    { "min": 8.72 , "max": 9.03 , "score": 3 },
+    { "min": 9.04, "max": 9.35, "score": 2 },
+    { "min": 9.36, "score": 1 }
+  ],
+  "3": [
+    { "max": 5.37, "score": 10 },
+    { "min": 5.38, "max": 5.67, "score": 9 },
+    { "min": 5.68, "max": 5.97, "score": 8 },
+    { "min": 5.98, "max": 6.27, "score": 7 },
+    { "min": 6.28, "max": 6.57, "score": 6 },
+    { "min": 6.58, "max": 6.87, "score": 5 },
+    { "min": 6.88, "max": 7.17, "score": 4 },
+    { "min": 7.18, "max": 7.47, "score": 3 },
+    { "min": 7.48, "max": 7.77, "score": 2 },
+    { "min": 7.78, "score": 1 }
+  ],
+  "4": [
+    { "min": 6.50, "score": 10 },
+    { "min": 6.01, "max": 6.49, "score": 9 },
+    { "min": 5.52, "max": 6.00, "score": 8 },
+    { "min": 5.03, "max": 5.51, "score": 7 },
+    { "min": 4.54, "max": 5.02, "score": 6 },
+    { "min": 4.05, "max": 4.53, "score": 5 },
+    { "min": 3.56, "max": 4.04, "score": 4 },
+    { "min": 3.07, "max": 3.55, "score": 3 },
+    { "min": 2.58, "max": 3.06, "score": 2 },
+    { "max": 2.57, "score": 1 }
+  ],
+  "5": [
+    { "min": 66.52, "score": 10 },
+    { "min": 60.52, "max": 66.51, "score": 9 },
+    { "min": 54.52, "max": 60.51, "score": 8 },
+    { "min": 48.52, "max": 54.51, "score": 7 },
+    { "min": 42.52, "max": 48.51, "score": 6 },
+    { "min": 36.52, "max": 42.51, "score": 5 },
+    { "min": 30.52, "max": 36.51, "score": 4 },
+    { "min": 24.52, "max": 30.51, "score": 3 },
+    { "min": 18.52, "max": 24.51, "score": 2 },
+    { "max": 18.51, "score": 1 }
+  ],
+  "6": [
+    { "min": 5.39, "score": 10 },
+    { "min": 5.04, "max": 5.38, "score": 9 },
+    { "min": 4.69, "max": 5.03, "score": 8 },
+    { "min": 4.34, "max": 4.68, "score": 7 },
+    { "min": 3.99, "max": 4.33, "score": 6 },
+    { "min": 3.64, "max": 3.98, "score": 5 },
+    { "min": 3.29, "max": 3.63, "score": 4 },
+    { "min": 2.94, "max": 3.28, "score": 3 },
+    { "min": 2.59, "max": 2.93, "score": 2 },
+    { "max": 2.58, "score": 1 }
+  ],
+  "7": [
+    { "max": 12.31, "score": 10 },
+    { "min": 12.32, "max": 12.75, "score": 9 },
+    { "min": 12.76, "max": 13.19, "score": 8 },
+    { "min": 13.20, "max": 13.63, "score": 7 },
+    { "min": 13.64, "max": 14.07, "score": 6 },
+    { "min": 14.08, "max": 14.51, "score": 5 },
+    { "min": 14.52, "max": 14.95, "score": 4 },
+    { "min": 14.96, "max": 15.39, "score": 3 },
+    { "min": 15.40, "max": 15.83, "score": 2 },
+    { "min": 15.84, "score": 1 }
+  ],
+  "8": [
+    { "min": 6.79, "score": 10 },
+    { "min": 5.79, "max": 6.78, "score": 9 },
+    { "min": 4.79, "max": 5.78, "score": 8 },
+    { "min": 3.79, "max": 4.78, "score": 7 },
+    { "min": 2.79, "max": 3.78, "score": 6 },
+    { "min": 1.79, "max": 2.78, "score": 5 },
+    { "min": 0.79, "max": 1.78, "score": 4 },
+    { "max": 0.78,"score": 3 }
+  
+  ],
+  "9": [
+    { "min": 179.13, "score": 10 },
+    { "min": 170.02, "max": 179.12, "score": 9 },
+    { "min": 160.91, "max": 170.01, "score": 8 },
+    { "min": 151.80, "max": 160.90, "score": 7 },
+    { "min": 142.69, "max": 151.79, "score": 6 },
+    { "min": 133.58, "max": 142.68, "score": 5 },
+    { "min": 124.47, "max": 133.57, "score": 4 },
+    { "min": 115.36, "max": 124.46, "score": 3 },
+    { "min": 106.25, "max": 115.35, "score": 2 },
+    { "max": 106.24, "score": 1 }
+  ],
+  "10": [
+    { "min": 3, "score": 10 },
+    { "min": 2, "max": 2, "score": 8 },
+    { "min": 1, "max": 1, "score": 5 },
+    { "min": 0, "max": 0, "score": 4 }
+  ]
+},
+
+ "5": {
+  "1": [
+    { "max": 3.35, "score": 10 },
+    { "min": 3.36, "max": 3.59, "score": 9 },
+    { "min": 3.60, "max": 3.83, "score": 8 },
+    { "min": 3.84, "max": 4.07, "score": 7 },
+    { "min": 4.08, "max": 4.31, "score": 6 },
+    { "min": 4.32, "max": 4.55, "score": 5 },
+    { "min": 4.56, "max": 4.79, "score": 4 },
+    { "min": 4.80, "max": 5.03, "score": 3 },
+    { "min": 5.04, "max": 5.27, "score": 2 },
+    { "min": 5.28, "score": 1 }
+  ],
+  "2": [
+    { "max": 5.36, "score": 10 },
+    { "min": 5.37, "max": 5.56, "score": 9 },
+    { "min": 5.57, "max": 5.76, "score": 8 },
+    { "min": 5.77, "max": 5.96, "score": 7 },
+    { "min": 5.97, "max": 6.16, "score": 6 },
+    { "min": 6.17, "max": 6.36, "score": 5 },
+    { "min": 6.37, "max": 6.56, "score": 4 },
+    { "min": 6.57, "max": 6.76, "score": 3 },
+    { "min": 6.77, "max": 6.96, "score": 2 },
+    { "min": 6.97, "score": 1 }
+  ],
+  "3": [
+    { "max": 4.41, "score": 10 },
+    { "min": 4.42, "max": 4.62, "score": 9 },
+    { "min": 4.63, "max": 4.83, "score": 8 },
+    { "min": 4.84, "max": 5.04, "score": 7 },
+    { "min": 5.05, "max": 5.25, "score": 6 },
+    { "min": 5.26, "max": 5.46, "score": 5 },
+    { "min": 5.47, "max": 5.67, "score": 4 },
+    { "min": 5.68, "max": 5.88, "score": 3 },
+    { "min": 5.89, "max": 6.09, "score": 2 },
+    { "min": 6.10, "score": 1 }
+  ],
+  "4": [
+    { "min": 9.10, "score": 10 },
+    { "min": 8.66, "max": 9.09, "score": 9 },
+    { "min": 8.22, "max": 8.65, "score": 8 },
+    { "min": 7.78, "max": 8.21, "score": 7 },
+    { "min": 7.34, "max": 7.77, "score": 6 },
+    { "min": 6.90, "max": 7.33, "score": 5 },
+    { "min": 6.46, "max": 6.89, "score": 4 },
+    { "min": 6.02, "max": 6.45, "score": 3 },
+    { "min": 5.58, "max": 6.01, "score": 2 },
+    { "max": 5.57, "score": 1 }
+  ],
+  "5": [
+    { "min": 79.78, "score": 10 },
+    { "min": 76.67, "max": 79.77, "score": 9 },
+    { "min": 73.56, "max": 76.66, "score": 8 },
+    { "min": 70.45, "max": 73.55, "score": 7 },
+    { "min": 67.34, "max": 70.44, "score": 6 },
+    { "min": 64.23, "max": 67.33, "score": 5 },
+    { "min": 61.12, "max": 64.22, "score": 4 },
+    { "min": 58.01, "max": 61.11, "score": 3 },
+    { "min": 54.90, "max": 58.00, "score": 2 },
+    { "max": 54.89, "score": 1 }
+  ],
+  "6": [
+    { "min": 9.21, "score": 10 },
+    { "min": 8.97, "max": 9.20, "score": 9 },
+    { "min": 8.73, "max": 8.96, "score": 8 },
+    { "min": 8.49, "max": 8.72, "score": 7 },
+    { "min": 8.25, "max": 8.48, "score": 6 },
+    { "min": 8.01, "max": 8.24, "score": 5 },
+    { "min": 7.77, "max": 8.00, "score": 4 },
+    { "min": 7.53, "max": 7.76, "score": 3 },
+    { "min": 7.29, "max": 7.52, "score": 2 },
+    { "max": 7.28, "score": 1 }
+  ],
+   "7": [
+    { "max": 8.96, "score": 10 },
+    { "min": 8.97, "max": 9.41, "score": 9 },
+    { "min": 9.42, "max": 9.86, "score": 8 },
+    { "min": 9.87, "max": 10.31, "score": 7 },
+    { "min": 10.32, "max": 10.76, "score": 6 },
+    { "min": 10.77, "max": 11.21, "score": 5 },
+    { "min": 11.22, "max": 11.66, "score": 4 },
+    { "min": 11.67, "max": 12.11, "score": 3 },
+    { "min": 12.12, "max": 12.56, "score": 2 },
+    { "min": 12.57, "score": 1 }
+  ],
+"8": [
+  { "min": 21.64, "score": 10 },
+  { "min": 20.31, "max": 21.63, "score": 9 },
+  { "min": 18.98, "max": 20.30, "score": 8 },
+  { "min": 17.65, "max": 18.97, "score": 7 },
+  { "min": 16.32, "max": 17.64, "score": 6 },
+  { "min": 14.99, "max": 16.31, "score": 5 },
+  { "min": 13.66, "max": 14.98, "score": 4 },
+  { "min": 12.33, "max": 13.65, "score": 3 },
+  { "min": 11.00, "max": 12.32, "score": 2 },
+  { "max": 10.99, "score": 1 }
+],
+
+"9": [
+  { "min": 233.96, "score": 10},
+  { "min": 229.18, "max": 233.95, "score": 9 },
+  { "min": 224.40, "max": 229.17, "score": 8 },
+  { "min": 219.62, "max": 224.39, "score": 7 },
+  { "min": 214.84, "max": 219.61, "score": 6 },
+  { "min": 210.06, "max": 214.83, "score": 5 },
+  { "min": 205.28, "max": 210.05, "score": 4 },
+  { "min": 200.50, "max": 205.27, "score": 3 },
+  { "min": 195.72, "max": 200.49, "score": 2 },
+  { "max": 195.71, "score": 1 }
+],
+"10": [
+    {"min": 5, "score": 10 },
+    {"min": 4,"max": 4, "score": 9 },
+    {"min": 3, "max": 3, "score": 7 },
+    {"min": 2, "max": 2, "score": 5 },
+    {"min": 1,"max": 1, "score": 3 },
+    {"min": 0, "max": 0, "score": 2 }
+]
+
+}
+
   }
   
 }
