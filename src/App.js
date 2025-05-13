@@ -3,6 +3,11 @@ import { Routes, Route } from "react-router-dom";
 import { io } from 'socket.io-client';
 import scoreData from './tinhdiem.json';
 import { Table } from 'antd';
+import { Link } from "react-router-dom";
+import { Form,Space , Input, Select, InputNumber, Button, Card, Typography, Row, Col, Divider } from 'antd';
+
+const { Title, Text } = Typography;
+const { Option } = Select;
 const socket = io("http://localhost:4000"); // Đảm bảo kết nối với server
 
 const Chamdiem = () => {
@@ -79,89 +84,126 @@ const Chamdiem = () => {
     socket.emit("saveUserData", userData);
     alert("Dữ liệu đã được lưu!");
   };
-  
+  useEffect(() => {
+  const updatedScores = {};
+  for (const test in results) {
+    const score = getScore(gender, age, test, results[test]);
+    updatedScores[test] = score !== null ? score : 'Không hợp lệ';
+  }
+  setScores(updatedScores);
+}, [gender, age, results]);
 
-  return (
-    <div style={{ padding: '20px' }}>
-      <h2>Chấm điểm KNVĐ</h2>
 
-      <div>
-        <label>
-          Tên người dùng:
-          <input
-            type="text"
+return (
+  <div style={{ padding: '24px', maxWidth: 800, margin: 'auto' }}>
+    <Card bordered>
+      <Title level={2}>Chấm điểm KNVĐ</Title>
+
+      <Form layout="vertical">
+        <Form.Item label="Tên người thi">
+          <Input
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            placeholder="Nhập tên người dùng"
-            required
+            placeholder="Nhập tên người thi"
           />
-        </label>
-      </div>
+        </Form.Item>
 
-      <div>
-        <label>
-          Giới tính:
-          <select value={gender} onChange={(e) => setGender(e.target.value)}>
-            <option value="nam">Nam</option>
-            <option value="nu">Nữ</option>
-          </select>
-        </label>
-      </div>
+        <Row gutter={16}>
+          <Col span={12}>
+            <Form.Item label="Giới tính">
+              <Select value={gender} onChange={(value) => setGender(value)}>
+                <Option value="nam">Nam</Option>
+                <Option value="nu">Nữ</Option>
+              </Select>
+            </Form.Item>
+          </Col>
 
-      <div>
-        <label>
-          Tuổi:
-          <input
-            type="number"
-            value={age}
-            onChange={(e) => setAge(parseInt(e.target.value))}
-            min={4}
-            max={5}
-          />
-        </label>
-      </div>
-
-      <h3>Nhập thời gian hoàn thành (giây):</h3>
-      {[...Array(10)].map((_, i) => {
-        const test = i + 1;
-        return (
-          <div key={test}>
-            <label>
-              Bài {test}:
-              <input
-                type="number"
-                step="0.01"
-                onChange={(e) => handleChange(test, e.target.value)}
+          <Col span={12}>
+            <Form.Item label="Tuổi">
+              <InputNumber
+                min={4}
+                max={5}
+                value={age}
+                onChange={(value) => setAge(value)}
+                style={{ width: '100%' }}
               />
-            </label>
-          </div>
-        );
-      })}
+            </Form.Item>
+          </Col>
+        </Row>
 
-      {Object.keys(scores).length > 0 && (
-        <div>
-          <h3>Kết quả:</h3>
-          <ul>
+        <Divider />
+
+        <Title level={4}>Nhập thời gian hoàn thành (giây):</Title>
+        {<Row gutter={[16, 8]}>
+  {[...Array(10)].map((_, i) => {
+    const test = i + 1;
+    return (
+      <Col xs={12} sm={8} md={6} lg={4} key={test}>
+        <Form.Item label={`Bài ${test}`} style={{ marginBottom: 8 }}>
+          <InputNumber
+            min={0}
+            step={0.01}
+            onChange={(value) => handleChange(test, value)}
+            style={{ width: '100%' }}
+          />
+        </Form.Item>
+      </Col>
+    );
+  })}
+</Row>
+}
+
+        {Object.keys(scores).length > 0 && (
+          <>
+            <Divider />
+            <Title level={4}>Kết quả</Title>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px' }}>
+
             {Object.entries(scores).map(([test, score]) => (
-              <li key={test}>
-                Bài {test}: {score}
-              </li>
+              <Text key={test} block>
+                Bài {test}: <strong>{score}</strong>
+              </Text>
+             
             ))}
-          </ul>
-          <strong>
-            Tổng điểm: {Object.values(scores).reduce((acc, val) => acc + (typeof val === 'number' ? val : 0), 0)}
-          </strong>
-        </div>
-      )}
+            <br /> </div>
+            <Text strong style={{ fontSize: '16px' }}>
+              Tổng điểm:{" "}
+              {Object.values(scores).reduce(
+                (acc, val) => acc + (typeof val === 'number' ? val : 0),
+                0
+              )}
+            </Text>
+          </>
+        )}
 
-      <button onClick={handleSaveData}>Lưu dữ liệu</button>
-    </div>
-  );
+        <Divider />
+
+     <Row justify="space-between" style={{ width: '100%' }}>
+  <Col>
+    <Link to="/thongke">
+      <Button>Xem thống kê</Button>
+    </Link>
+  </Col>
+  <Col>
+    <Button type="primary" onClick={handleSaveData}>
+      Lưu dữ liệu
+    </Button>
+  </Col>
+</Row>
+
+      </Form>
+    </Card>
+  </div>
+);
+
 };
 const Thongke = () => {
   const [scoresData, setScoresData] = useState([]);
   const [sorted, setSorted] = useState(false);
-
+  const [searchText, setSearchText] = useState("");
+  const filteredData = scoresData.filter((userData) =>
+    userData.username.toLowerCase().includes(searchText.toLowerCase())
+  );
   const fetchScores = () => {
     fetch("http://localhost:4000/api/scores")
       .then((response) => response.json())
@@ -194,44 +236,95 @@ const Thongke = () => {
     setScoresData(sortedData);
     setSorted(true);
   };
-
-  return (
-    <div>
+ const columns = [
+    {
+      title: "Username",
+      dataIndex: "username",
+      key: "username",
+    },
+    {
+      title: "Giới tính",
+      dataIndex: "gender",
+      key: "gender",
+    },
+    {
+      title: "Tuổi",
+      dataIndex: "age",
+      key: "age",
+    },
+        ...Array.from({ length: 10 }, (_, i) => ({
+      title: `Bài kiểm tra ${i + 1}`,
+      dataIndex: `result_${i + 1}`,
+      key: `result_${i + 1}`,
+      render: (_, record) => `${record.results[i + 1]} giây/ ${record.scores[i + 1]} điểm`, // Kết hợp kết quả và điểm
+    })),
+    {
+      title: "Tổng điểm",
+      dataIndex: "totalScore",
+      key: "totalScore",
+    },
+      {
+      title: "Xếp hạng",
+      key: "ranking",
+      render: (_, record) => getRanking(record.totalScore),
+    },
+  ];
+    const getRanking = (score) => {
+    if (score >= 90) return "Xuất sắc";
+    if (score >= 75) return "Tốt";
+    if (score >= 50) return "Trung bình";
+    if (score >= 30) return "Yếu";
+    return "Kém";
+  };
+  const formattedData = filteredData.map((userData) => ({
+    ...userData,
+    ...Array.from({ length: 10 }, (_, i) => ({
+      [`result_${i + 1}`]: userData.results[i + 1],
+      [`score_${i + 1}`]: userData.scores[i + 1],
+    })).reduce((acc, curr) => ({ ...acc, ...curr }), {}),
+  }));
+ return (
+    <div style={{ padding: "20px" }}>
       <h2>Thống kê Điểm</h2>
-      <button onClick={handleResetScores} style={{ marginRight: "10px" }}>
-        Reset tổng điểm
-      </button>
-      <button onClick={handleSortByScore}>
-        Sắp xếp từ cao xuống thấp
-      </button>
-
-      {scoresData.length > 0 ? (
-        <table border="1" cellPadding="8" style={{ marginTop: "20px" }}>
-          <thead>
-            <tr>
-              <th>Username</th>
-              <th>Giới tính</th>
-              <th>Tuổi</th>
-              <th>Tổng điểm</th>
-            </tr>
-          </thead>
-          <tbody>
-            {scoresData.map((userData, index) => (
-              <tr key={index}>
-                <td>{userData.username}</td>
-                <td>{userData.gender}</td>
-                <td>{userData.age}</td>
-                <td>{userData.totalScore}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      <Space style={{ marginBottom: "16px", display: "flex", justifyContent: "space-between", width: "100%" }}>
+        <div>
+              <Link to="/">
+      <Button  style={{ marginRight: "10px" }}>Chấm điểm</Button>
+    </Link>
+          <Button onClick={handleResetScores} type="primary" danger>
+            Reset tổng điểm
+          </Button>
+       
+          <Button onClick={handleSortByScore} type="default" style={{ marginLeft: "10px" }}>
+            Sắp xếp từ cao xuống thấp
+          </Button>
+        </div>
+        {/* Ô tìm kiếm nằm bên phải */}
+        <Input
+          placeholder="Tìm kiếm theo tên"
+          value={searchText}
+          onChange={(e) => setSearchText(e.target.value)}
+          style={{ width: 300 }}
+        />
+      </Space>
+      
+      {formattedData.length > 0 ? (
+        <Table
+          columns={columns}
+          dataSource={formattedData}
+          rowKey="username"
+          bordered
+          pagination={false}
+        />
       ) : (
         <p>Chưa có dữ liệu thống kê.</p>
       )}
     </div>
   );
 };
+
+
+
 
 
 const App = () => {
