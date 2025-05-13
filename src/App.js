@@ -5,7 +5,7 @@ import scoreData from './tinhdiem.json';
 import { Table } from 'antd';
 import { Link } from "react-router-dom";
 import { Form,Space , Input, Select, InputNumber, Button, Card, Typography, Row, Col, Divider } from 'antd';
-
+import * as XLSX from "xlsx";
 const { Title, Text } = Typography;
 const { Option } = Select;
 const socket = io("http://localhost:4000"); // Đảm bảo kết nối với server
@@ -283,6 +283,32 @@ const Thongke = () => {
       [`score_${i + 1}`]: userData.scores[i + 1],
     })).reduce((acc, curr) => ({ ...acc, ...curr }), {}),
   }));
+const handleExportExcel = () => {
+  const exportData = filteredData.map((user) => {
+    const row = {
+      Username: user.username,
+      "Giới tính": user.gender,
+      Tuổi: user.age,
+      "Tổng điểm": user.totalScore,
+      "Xếp hạng": getRanking(user.totalScore),
+    };
+
+    // Thêm các cột Bài 1 -> Bài 10 theo dạng "kết quả / điểm"
+    for (let i = 1; i <= 10; i++) {
+       const time = user.results[i] ?? "";
+      const score = user.scores[i] ?? "";
+      row[`Bài ${i}`] = `${time} giây / ${score} điểm`;
+    }
+
+    return row;
+  });
+
+  const ws = XLSX.utils.json_to_sheet(exportData);
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, "Thống kê điểm");
+  XLSX.writeFile(wb, "ThongKeDiem.xlsx");
+};
+
  return (
     <div style={{ padding: "20px" }}>
       <h2>Thống kê Điểm</h2>
@@ -307,7 +333,9 @@ const Thongke = () => {
           style={{ width: 300 }}
         />
       </Space>
-      
+          <Button onClick={handleExportExcel} type="primary" style={{ marginBottom: "16px" }}>
+        Xuất Excel
+      </Button>
       {formattedData.length > 0 ? (
         <Table
           columns={columns}
