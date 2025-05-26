@@ -8,7 +8,19 @@ import { Form,Space , Input, Select, InputNumber, Button, Card, Typography, Row,
 import * as XLSX from "xlsx";
 const { Title, Text } = Typography;
 const { Option } = Select;
-const socket = io("http://localhost:4000"); // Đảm bảo kết nối với server
+const socket = io("http://localhost:4000");
+const testNames = [
+  "Chạy 10m xuất phát cao (giây)",
+  "Chạy luồn cọc zic-zac (giây)",
+  "Di chuyển ngang 10m (giây)",
+  "Nhảy lò cò xa nhất (mét)",
+  "Bật xa tại chỗ bằng hai chân (cm)",
+  "Giữ thăng bằng bằng một chân (giây)",
+  "Bò bằng tay và chân theo đường zic-zac (giây)",
+  "Đập và bắt bóng bằng hai tay trong 15 giây (số lần)",
+  "Ném túi cát bằng tay thuận (mét)",
+  "Tung bóng vào xô bằng hai tay (5 lần thử – số lần vào)"
+];
 
 const Chamdiem = () => {
   const [gender, setGender] = useState('nam');
@@ -95,7 +107,7 @@ const Chamdiem = () => {
 
 
 return (
-  <div style={{ padding: '24px', maxWidth: 800, margin: 'auto' }}>
+  <div style={{ padding: '0px', maxWidth: 1440, margin: 'auto' }}>
     <Card bordered>
       <Title level={2}>Chấm điểm KNVĐ</Title>
 
@@ -138,8 +150,21 @@ return (
   {[...Array(10)].map((_, i) => {
     const test = i + 1;
     return (
-      <Col xs={12} sm={8} md={6} lg={4} key={test}>
-        <Form.Item label={`Bài ${test}`} style={{ marginBottom: 8 }}>
+      <Col xs={24} sm={12} md={8} lg={8} xl={6} key={test}>
+        <Form.Item
+          label={
+            <div style={{
+              whiteSpace: 'normal',
+              height: 48,
+              overflow: 'hidden',
+              fontSize: 13,
+              lineHeight: '16px'
+            }}>
+              Bài {test} – {testNames[test - 1]}
+            </div>
+          }
+          style={{ marginBottom: 12 }}
+        >
           <InputNumber
             min={0}
             step={0.01}
@@ -151,6 +176,7 @@ return (
     );
   })}
 </Row>
+
 }
 
         {Object.keys(scores).length > 0 && (
