@@ -28,7 +28,7 @@ const Chamdiem = () => {
   const [results, setResults] = useState({});
   const [scores, setScores] = useState({});
   const [username, setUsername] = useState('');
-
+const [organization, setOrganization] = useState('');
   const handleChange = (test, value) => {
     const newResults = {
       ...results,
@@ -86,9 +86,10 @@ const Chamdiem = () => {
   
     const userData = {
       username,
+      organization,
       gender,
       age,
-      results: { ...results },  // Giả sử bạn có phần lưu kết quả gốc
+      results: { ...results },  
       scores: { ...scores },
       totalScore,
     };
@@ -119,7 +120,13 @@ return (
             placeholder="Nhập tên người thi"
           />
         </Form.Item>
-
+<Form.Item label="Tên đơn vị">
+  <Input
+    value={organization}
+    onChange={(e) => setOrganization(e.target.value)}
+    placeholder="Nhập tên đơn vị"
+  />
+</Form.Item>
         <Row gutter={16}>
           <Col span={12}>
             <Form.Item label="Giới tính">
@@ -278,6 +285,11 @@ const Thongke = () => {
       dataIndex: "age",
       key: "age",
     },
+    {
+  title: "Đơn vị",
+  dataIndex: "organization",
+  key: "organization",
+},
         ...Array.from({ length: 10 }, (_, i) => ({
       title: `Bài kiểm tra ${i + 1}`,
       dataIndex: `result_${i + 1}`,
@@ -313,6 +325,7 @@ const handleExportExcel = () => {
   const exportData = filteredData.map((user) => {
     const row = {
       Username: user.username,
+      "Tên đơn vị": user.organization || "",
       "Giới tính": user.gender,
       Tuổi: user.age,
       "Tổng điểm": user.totalScore,
