@@ -108,8 +108,10 @@ const Chamdiem = () => {
 
 return (
   <div style={{ padding: '0px', maxWidth: 1440, margin: 'auto' }}>
-    <Card bordered>
-      <Title level={2}>Chấm điểm KNVĐ</Title>
+    <Card >
+      <Title level={2}>TIÊU CHUẨN ĐÁNH GIÁ KỸ NĂNG VẬN ĐỘNG
+CHO TRẺ 4-5 TUỔI
+</Title>
 
       <Form layout="vertical">
         <Form.Item label="Tên người thi">
@@ -219,6 +221,11 @@ return (
 
       </Form>
     </Card>
+    
+    <div style={{ textAlign: 'center', marginTop: '20px' }}>
+      <Text type="secondary">Nguồn trích dẫn từ luận án tiến sĩ “Xây dựng chương trình phổ cập môn Taekwondo phát triển kỹ năng vận động cho trẻ 4 - 5 tuổi các trường mầm non dân lập trên địa bàn thành phố Hà Nội”
+         Bùi Văn Quyết, Email: buivanquyet@hpu2.edu.vn , Sđt: 0338157313</Text>
+  </div>
   </div>
 );
 
