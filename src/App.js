@@ -1,11 +1,12 @@
-import React, { useEffect ,useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { io } from 'socket.io-client';
 import scoreData from './tinhdiem.json';
 import { Table } from 'antd';
 import { Link } from "react-router-dom";
-import { Form,Space , Input, Select, InputNumber, Button, Card, Typography, Row, Col, Divider } from 'antd';
+import { Form, Space, Input, Select, InputNumber, Button, Card, Typography, Row, Col, Divider } from 'antd';
 import * as XLSX from "xlsx";
+import './App.css'; 
 const { Title, Text } = Typography;
 const { Option } = Select;
 const socket = io("http://localhost:4000");
@@ -18,7 +19,7 @@ const testNames = [
   "Giữ thăng bằng bằng một chân (giây)",
   "Bò bằng tay và chân theo đường zic-zac (giây)",
   "Đập và bắt bóng bằng hai tay trong 15 giây (số lần)",
-  "Ném túi cát bằng tay thuận (mét)",
+  "Ném túi cát bằng tay thuận (cm)",
   "Tung bóng vào xô bằng hai tay (5 lần thử – số lần vào)"
 ];
 
@@ -28,7 +29,7 @@ const Chamdiem = () => {
   const [results, setResults] = useState({});
   const [scores, setScores] = useState({});
   const [username, setUsername] = useState('');
-const [organization, setOrganization] = useState('');
+  const [organization, setOrganization] = useState('');
   const handleChange = (test, value) => {
     const newResults = {
       ...results,
@@ -65,182 +66,195 @@ const [organization, setOrganization] = useState('');
       alert("Vui lòng nhập tên người dùng!");
       return;
     }
-  
+
     const scoreValues = Object.values(scores);
-  
+
     if (scoreValues.length < 10) {
       alert("Vui lòng nhập đủ điểm cho 10 bài!");
       return;
     }
-  
+
     const hasInvalidScore = scoreValues.some(
       (val) => val === null || val === "" || isNaN(val)
     );
-  
+
     if (hasInvalidScore) {
       alert("Tất cả điểm phải là số hợp lệ!");
       return;
     }
-  
+
     const totalScore = scoreValues.reduce((acc, val) => acc + Number(val), 0);
-  
+
     const userData = {
       username,
       organization,
       gender,
       age,
-      results: { ...results },  
+      results: { ...results },
       scores: { ...scores },
       totalScore,
     };
-  
+
     socket.emit("saveUserData", userData);
     alert("Dữ liệu đã được lưu!");
   };
   useEffect(() => {
-  const updatedScores = {};
-  for (const test in results) {
-    const score = getScore(gender, age, test, results[test]);
-    updatedScores[test] = score !== null ? score : 'Không hợp lệ';
-  }
-  setScores(updatedScores);
-}, [gender, age, results]);
+    const updatedScores = {};
+    for (const test in results) {
+      const score = getScore(gender, age, test, results[test]);
+      updatedScores[test] = score !== null ? score : 'Không hợp lệ';
+    }
+    setScores(updatedScores);
+  }, [gender, age, results]);
 
 
-return (
-  <div style={{ padding: '0px', maxWidth: 1440, margin: 'auto' }}>
-    <Card >
-      <Title level={2}>TIÊU CHUẨN ĐÁNH GIÁ KỸ NĂNG VẬN ĐỘNG
-CHO TRẺ 4-5 TUỔI
-</Title>
+  return (
+    <div style={{ padding: '0px', maxWidth: 1440, margin: 'auto' }}>
+      <Card >
+        <div style={{ textAlign: 'center', marginTop: '0px' }}>
+          <Title level={3}>
+            TIÊU CHUẨN ĐÁNH GIÁ KỸ NĂNG VẬN ĐỘNG CHO TRẺ 4-5 TUỔI
+          </Title>
+        </div>
 
-      <Form layout="vertical">
-        <Form.Item label="Tên người thi">
-          <Input
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            placeholder="Nhập tên người thi"
-          />
-        </Form.Item>
-<Form.Item label="Tên đơn vị">
-  <Input
-    value={organization}
-    onChange={(e) => setOrganization(e.target.value)}
-    placeholder="Nhập tên đơn vị"
-  />
-</Form.Item>
-        <Row gutter={16}>
-          <Col span={12}>
-            <Form.Item label="Giới tính">
-              <Select value={gender} onChange={(value) => setGender(value)}>
-                <Option value="nam">Nam</Option>
-                <Option value="nu">Nữ</Option>
-              </Select>
-            </Form.Item>
-          </Col>
+        <Form layout="vertical">
+  <Row gutter={16}>
+  <Col span={12}>
+    <Form.Item label="Tên người thi">
+      <Input
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+        placeholder="Nhập tên người thi"
+      />
+    </Form.Item>
+  </Col>
+  <Col span={12}>
+    <Form.Item label="Tên đơn vị">
+      <Input
+        value={organization}
+        onChange={(e) => setOrganization(e.target.value)}
+        placeholder="Nhập tên đơn vị"
+      />
+    </Form.Item>
+  </Col>
+</Row>
 
-          <Col span={12}>
-            <Form.Item label="Tuổi">
-              <InputNumber
-                min={4}
-                max={5}
-                value={age}
-                onChange={(value) => setAge(value)}
-                style={{ width: '100%' }}
-              />
-            </Form.Item>
-          </Col>
-        </Row>
+          <Row gutter={16}>
+            <Col span={12}>
+              <Form.Item label="Giới tính">
+                <Select value={gender} onChange={(value) => setGender(value)}>
+                  <Option value="nam">Nam</Option>
+                  <Option value="nu">Nữ</Option>
+                </Select>
+              </Form.Item>
+            </Col>
 
-        <Divider />
+            <Col span={12}>
+              <Form.Item label="Tuổi">
+                <InputNumber
+                  min={4}
+                  max={5}
+                  value={age}
+                  onChange={(value) => setAge(value)}
+                  style={{ width: '100%' }}
+                />
+              </Form.Item>
+            </Col>
+          </Row>
 
-        <Title level={4}>Nhập thời gian hoàn thành (giây):</Title>
-        {<Row gutter={[16, 8]}>
-  {[...Array(10)].map((_, i) => {
-    const test = i + 1;
-    return (
-      <Col xs={24} sm={12} md={8} lg={8} xl={6} key={test}>
-        <Form.Item
-          label={
-            <div style={{
-              whiteSpace: 'normal',
-              height: 48,
-              overflow: 'hidden',
-              fontSize: 13,
-              lineHeight: '16px'
-            }}>
-              Bài {test} – {testNames[test - 1]}
-            </div>
+          
+
+          <Title level={3}>Nhập thời gian hoàn thành (giây):</Title>
+          {<Row gutter={[16, 8]}>
+            {[...Array(10)].map((_, i) => {
+              const test = i + 1;
+              return (
+                <Col xs={4} key={test}>
+                  <Form.Item
+                    label={
+                      <div style={{
+                        whiteSpace: 'normal',
+                        height: 48,
+                        overflow: 'hidden',
+                        fontSize: 13,
+                        lineHeight: '16px',
+                        textAlign: 'center'
+                      }}>
+                        Bài {test} – {testNames[test - 1]}
+                      </div>
+                    }
+                    style={{ marginBottom: 12 }}
+                  >
+                    <InputNumber
+                      min={0}
+                      step={0.01}
+                      onChange={(value) => handleChange(test, value)}
+                      style={{ width: '100%' }}
+                    />
+                  </Form.Item>
+                </Col>
+              );
+            })}
+          </Row>
+
+
+
           }
-          style={{ marginBottom: 12 }}
-        >
-          <InputNumber
-            min={0}
-            step={0.01}
-            onChange={(value) => handleChange(test, value)}
-            style={{ width: '100%' }}
-          />
-        </Form.Item>
-      </Col>
-    );
-  })}
-</Row>
 
-}
+          {Object.keys(scores).length > 0 && (
+            <>
+              <Divider />
+              <Title level={4}>Kết quả</Title>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px' }}>
 
-        {Object.keys(scores).length > 0 && (
-          <>
-            <Divider />
-            <Title level={4}>Kết quả</Title>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px' }}>
+                {Object.entries(scores).map(([test, score]) => (
+                  <Text key={test} block>
+                    Bài {test}: <strong>{score}</strong>
+                  </Text>
 
-            {Object.entries(scores).map(([test, score]) => (
-              <Text key={test} block>
-                Bài {test}: <strong>{score}</strong>
+                ))}
+                <br /> </div>
+              <Text strong style={{ fontSize: '16px' }}>
+                Tổng điểm:{" "}
+                {Object.values(scores).reduce(
+                  (acc, val) => acc + (typeof val === 'number' ? val : 0),
+                  0
+                )}
               </Text>
-             
-            ))}
-            <br /> </div>
-            <Text strong style={{ fontSize: '16px' }}>
-              Tổng điểm:{" "}
-              {Object.values(scores).reduce(
-                (acc, val) => acc + (typeof val === 'number' ? val : 0),
-                0
-              )}
-            </Text>
-          </>
-        )}
+            </>
+          )}
 
-        <Divider />
+          <Divider />
 
-     <Row justify="space-between" style={{ width: '100%' }}>
-  <Col>
-    <Link to="/thongke">
-      <Button>Xem thống kê</Button>
-    </Link>
-  </Col>
-  <Col>
-    <Button type="primary" onClick={handleSaveData}>
-      Lưu dữ liệu
-    </Button>
-  </Col>
-</Row>
+          <Row justify="space-between" style={{ width: '100%' }}>
+            <Col>
+              <Link to="/thongke">
+                <Button>Xem thống kê</Button>
+              </Link>
+            </Col>
+            <Col>
+              <Button type="primary" onClick={handleSaveData}>
+                Lưu dữ liệu
+              </Button>
+            </Col>
+          </Row>
 
-      </Form>
-    </Card>
-    
-    <div style={{ textAlign: 'center', marginTop: '20px' }}>
-      <Text type="secondary">Nguồn trích dẫn từ luận án tiến sĩ “Xây dựng chương trình phổ cập môn Taekwondo phát triển kỹ năng vận động cho trẻ 4 - 5 tuổi các trường mầm non dân lập trên địa bàn thành phố Hà Nội”
-         Bùi Văn Quyết, Email: buivanquyet@hpu2.edu.vn , Sđt: 0338157313</Text>
-  </div>
-  </div>
-);
+        </Form>
+      </Card>
+
+      <div style={{ textAlign: 'center', marginTop: '20px' }}>
+        <Text >Nguồn trích dẫn từ luận án tiến sĩ “Xây dựng chương trình phổ cập môn Taekwondo phát triển kỹ năng vận động cho trẻ 4 - 5 tuổi các trường mầm non dân lập trên địa bàn thành phố Hà Nội”
+          <br /> Bùi Văn Quyết, Email: buivanquyet@hpu2.edu.vn , Sđt: 0338157313</Text>
+      </div>
+    </div>
+  );
 
 };
 const Thongke = () => {
   const [scoresData, setScoresData] = useState([]);
   const [sorted, setSorted] = useState(false);
   const [searchText, setSearchText] = useState("");
+  
   const filteredData = scoresData.filter((userData) =>
     userData.username.toLowerCase().includes(searchText.toLowerCase())
   );
@@ -254,7 +268,20 @@ const Thongke = () => {
         console.error("Error fetching scores:", error);
       });
   };
+ useEffect(() => {
+    fetch("http://localhost:4000/api/scores")
+      .then(res => res.json())
+      .then(setScoresData)
+      .catch(console.error);
+    socket.on("scoresUpdated", (updatedScores) => {
+      setScoresData(updatedScores);
+    });
 
+    // Cleanup khi component unmount
+    return () => {
+      socket.off("scoresUpdated");
+    };
+  }, []);
   useEffect(() => {
     fetchScores();
   }, []);
@@ -276,7 +303,7 @@ const Thongke = () => {
     setScoresData(sortedData);
     setSorted(true);
   };
- const columns = [
+  const columns = [
     {
       title: "Username",
       dataIndex: "username",
@@ -293,11 +320,11 @@ const Thongke = () => {
       key: "age",
     },
     {
-  title: "Đơn vị",
-  dataIndex: "organization",
-  key: "organization",
-},
-        ...Array.from({ length: 10 }, (_, i) => ({
+      title: "Đơn vị",
+      dataIndex: "organization",
+      key: "organization",
+    },
+    ...Array.from({ length: 10 }, (_, i) => ({
       title: `Bài kiểm tra ${i + 1}`,
       dataIndex: `result_${i + 1}`,
       key: `result_${i + 1}`,
@@ -308,13 +335,13 @@ const Thongke = () => {
       dataIndex: "totalScore",
       key: "totalScore",
     },
-      {
+    {
       title: "Xếp hạng",
       key: "ranking",
       render: (_, record) => getRanking(record.totalScore),
     },
   ];
-    const getRanking = (score) => {
+  const getRanking = (score) => {
     if (score >= 90) return "Xuất sắc";
     if (score >= 75) return "Tốt";
     if (score >= 50) return "Trung bình";
@@ -328,50 +355,55 @@ const Thongke = () => {
       [`score_${i + 1}`]: userData.scores[i + 1],
     })).reduce((acc, curr) => ({ ...acc, ...curr }), {}),
   }));
-const handleExportExcel = () => {
-  const exportData = filteredData.map((user) => {
-    const row = {
-      Username: user.username,
-      "Tên đơn vị": user.organization || "",
-      "Giới tính": user.gender,
-      Tuổi: user.age,
-      "Tổng điểm": user.totalScore,
-      "Xếp hạng": getRanking(user.totalScore),
-    };
+  const handleExportExcel = () => {
+    const exportData = filteredData.map((user) => {
+      const row = {
+        Username: user.username,
+        "Tên đơn vị": user.organization || "",
+        "Giới tính": user.gender,
+        Tuổi: user.age,
+        "Tổng điểm": user.totalScore,
+        "Xếp hạng": getRanking(user.totalScore),
+      };
+      for (let i = 1; i <= 10; i++) {
+        const time = user.results[i] ?? "";
+        const score = user.scores[i] ?? "";
+        row[`Bài ${i}`] = `${time} giây / ${score} điểm`;
+      }
 
-    // Thêm các cột Bài 1 -> Bài 10 theo dạng "kết quả / điểm"
-    for (let i = 1; i <= 10; i++) {
-       const time = user.results[i] ?? "";
-      const score = user.scores[i] ?? "";
-      row[`Bài ${i}`] = `${time} giây / ${score} điểm`;
-    }
+      return row;
+    });
 
-    return row;
-  });
+    const ws = XLSX.utils.json_to_sheet(exportData);
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, "Thống kê điểm");
+    XLSX.writeFile(wb, "ThongKeDiem.xlsx");
+  };
 
-  const ws = XLSX.utils.json_to_sheet(exportData);
-  const wb = XLSX.utils.book_new();
-  XLSX.utils.book_append_sheet(wb, ws, "Thống kê điểm");
-  XLSX.writeFile(wb, "ThongKeDiem.xlsx");
-};
-
- return (
-    <div style={{ padding: "20px" }}>
+  return (
+    <div style={{
+        padding: "20px",
+    height: "100vh",           
+    backgroundImage: "url('Logo.png')",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center center",
+    backgroundSize: "contain",
+    zIndex: 1,
+    }}>
       <h2>Thống kê Điểm</h2>
       <Space style={{ marginBottom: "16px", display: "flex", justifyContent: "space-between", width: "100%" }}>
         <div>
-              <Link to="/">
-      <Button  style={{ marginRight: "10px" }}>Chấm điểm</Button>
-    </Link>
+          <Link to="/">
+            <Button style={{ marginRight: "10px" }}>Chấm điểm</Button>
+          </Link>
           <Button onClick={handleResetScores} type="primary" danger>
             Reset tổng điểm
           </Button>
-       
+
           <Button onClick={handleSortByScore} type="default" style={{ marginLeft: "10px" }}>
             Sắp xếp từ cao xuống thấp
           </Button>
         </div>
-        {/* Ô tìm kiếm nằm bên phải */}
         <Input
           placeholder="Tìm kiếm theo tên"
           value={searchText}
@@ -379,7 +411,7 @@ const handleExportExcel = () => {
           style={{ width: 300 }}
         />
       </Space>
-          <Button onClick={handleExportExcel} type="primary" style={{ marginBottom: "16px" }}>
+      <Button onClick={handleExportExcel} type="primary" style={{ marginBottom: "16px" }}>
         Xuất Excel
       </Button>
       {formattedData.length > 0 ? (
