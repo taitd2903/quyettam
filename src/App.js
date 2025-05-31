@@ -9,7 +9,7 @@ import * as XLSX from "xlsx";
 import './App.css'; 
 const { Title, Text } = Typography;
 const { Option } = Select;
-const socket = io("http://localhost:4000");
+const socket = io("https://knvdserver.onrender.com/");
 const testNames = [
   "Chạy 10m xuất phát cao (giây)",
   "Chạy luồn cọc zic-zac (giây)",
@@ -259,7 +259,7 @@ const Thongke = () => {
     userData.username.toLowerCase().includes(searchText.toLowerCase())
   );
   const fetchScores = () => {
-    fetch("http://localhost:4000/api/scores")
+    fetch("https://knvdserver.onrender.com/api/scores")
       .then((response) => response.json())
       .then((data) => {
         setScoresData(data);
@@ -269,7 +269,7 @@ const Thongke = () => {
       });
   };
  useEffect(() => {
-    fetch("http://localhost:4000/api/scores")
+    fetch("https://knvdserver.onrender.com/api/scores")
       .then(res => res.json())
       .then(setScoresData)
       .catch(console.error);
@@ -287,7 +287,7 @@ const Thongke = () => {
   }, []);
 
   const handleResetScores = () => {
-    fetch("http://localhost:4000/api/reset-scores", { method: "POST" })
+    fetch("https://knvdserver.onrender.com/api/reset-scores", { method: "POST" })
       .then((response) => response.json())
       .then((data) => {
         alert(data.message);
@@ -328,7 +328,7 @@ const Thongke = () => {
       title: `Bài kiểm tra ${i + 1}`,
       dataIndex: `result_${i + 1}`,
       key: `result_${i + 1}`,
-      render: (_, record) => `${record.results[i + 1]} giây/ ${record.scores[i + 1]} điểm`, // Kết hợp kết quả và điểm
+      render: (_, record) => ` ${record.scores[i + 1]} điểm`, // Kết hợp kết quả và điểm
     })),
     {
       title: "Tổng điểm",
